@@ -1,0 +1,37 @@
+CREATE DATABASE Course
+use  Course
+
+CREATE TABLE Teachers(
+    [Id] INT PRIMARY KEY IDENTITY(1,1),
+    [Name] NVARCHAR(50) NOT NULL,
+    [Surname] NVARCHAR(50) NOT NULL,
+    [Age] INT,
+    [Email] NVARCHAR(50) UNIQUE
+)
+
+INSERT INTO Teachers([Name],[Surname],[Age],[Email])
+VALUES('Hamida','Guliyeva',20,'hamida@gmail.com')
+
+CREATE TABLE Students(
+    [Id] INT PRIMARY KEY IDENTITY(1,1),
+    [FullName] NVARCHAR(60) NOT NULL,
+    [Age] INT,
+    [Address] NVARCHAR(50)
+)
+
+INSERT INTO Students([FullName],[Age],[Address])
+VALUES('Ilgar Shiriyev',24,'20 yanvar')
+
+SELECT [Name],[Surname] FROM Teachers
+
+SELECT [FullName] FROM Students
+
+SELECT Count(*) FROM Students
+
+SELECT [Name],[Surname] FROM Teachers WHERE [Age]>20
+
+Select * From Teachers Where [Email] like '%c%'
+
+Select * From Teachers Where [Email] like '%s%'
+
+
